@@ -45,23 +45,25 @@ router.post('/blogs', async (req, res) => {
 // Update a blog
 router.put('/blogs/:id', async (req, res) => {
   try {
-    const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!updatedBlog) return res.status(404).json({ message: 'Blog not found' });
-    res.json(updatedBlog);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-});
-
-// Delete a blog
-router.delete('/blogs/:id', async (req, res) => {
-  try {
-    const deletedBlog = await Blog.findByIdAndDelete(req.params.id);
-    if (!deletedBlog) return res.status(404).json({ message: 'Blog not found' });
-    res.json({ message: 'Blog deleted successfully' });
+    const blog = await Blog.findByIdAndUpdate(req.params.id, req.body, { new: true }); // Assuming Blog is your Mongoose model
+    if (!blog) return res.status(404).json({ message: 'Blog not found' });
+    res.json(blog);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 });
+
+// Delete a blog
+// Delete a blog
+router.delete('/blogs/:id', async (req, res) => {
+  try {
+    const blog = await Blog.findByIdAndDelete(req.params.id); // Assuming Blog is your Mongoose model
+    if (!blog) return res.status(404).json({ message: 'Blog not found' });
+    res.status(204).send(); // Successfully deleted, no content to send
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 
 module.exports = router;
