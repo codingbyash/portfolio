@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import "../styles/landing.css";
 import { Link } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 
 const Landing = () => {
   const [projects, setProjects] = useState([]);
