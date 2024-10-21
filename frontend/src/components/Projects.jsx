@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Link} from "react-router-dom"
+import { Link } from 'react-router-dom';
 import '../styles/Projects.css';
 
 const Projects = () => {
@@ -23,16 +23,19 @@ const Projects = () => {
     <div className="projects-container">
       <h1>My Projects</h1>
       <div className="projects-grid">
-        {projects.map((project, index) => (
-          <div key={project.id} className="project-card">
+        {projects.map((project) => (
+          <div key={project._id} className="project-card">
             <h2>{project.title}</h2>
             <p>{project.description}</p>
             <div className="technologies">
-              {project.technologies.map((tech, index) => (
-                <span key={index} className="tech-badge">{tech}</span>
+              {project.technologies.map((tech) => (
+                <span key={tech} className="tech-badge">{tech}</span>
               ))}
             </div>
-            <a href={`/projects/${project._id}`} className="btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
+            {/* Using Link for internal navigation to the project details page */}
+            <Link to={`/projects/${project._id}`} className="btn-primary">
+              View Project
+            </Link>
           </div>
         ))}
       </div>
