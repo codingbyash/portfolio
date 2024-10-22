@@ -1,7 +1,7 @@
 // src/App.jsx
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Landing from './components/Landing';
+import Landing from './components/landing';
 import Projects from './components/Projects';
 import ProjectDetail from './components/ProjectDetail';
 import BlogList from './components/BlogList';

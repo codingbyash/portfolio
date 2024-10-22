@@ -28,7 +28,7 @@ const Chatbot = () => {
             dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
         >
             <div className="chatbot-container">
-                <h2>Chatbot</h2>
+                <h2 className='yahakah2'>Chatbot</h2>
                 <div className="chatbox">
                     {responses.map((response, index) => (
                         <motion.div
