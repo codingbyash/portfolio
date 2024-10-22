@@ -1,0 +1,103 @@
+/* frontend/src/components/Chatbot/Chatbot.css */
+.chatbot-floating-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    max-width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1000;
+    transition: transform 0.3s ease; /* Smooth transition for appearance */
+    transform: translateY(20px); /* Start slightly below the screen */
+    
+}
+
+.chatbot-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    animation: fadeIn 0.5s forwards; /* Fade-in effect */
+}
+
+@keyframes fadeIn {
+    to {
+        transform: translateY(0); /* Move to original position */
+        opacity: 1; /* Fade in */
+    }
+}
+
+h2 {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.chatbox {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f1f1f1;
+}
+
+.chat-message {
+    margin-bottom: 10px;
+    animation: slideIn 0.5s forwards; /* Slide-in effect for messages */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(10px); /* Start slightly below */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateY(0); /* Move to original position */
+        opacity: 1; /* Fade in */
+    }
+}
+
+.chatbot-form {
+    display: flex;
+    padding: 10px;
+    background-color: #e9ecef;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.send-button {
+    padding: 10px 15px;
+    margin-left: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background-color: #0056b3;
+}
+
+/* Add a bounce animation for the send button when pressed */
+.send-button:active {
+    animation: bounce 0.1s forwards;
+}
+
+@keyframes bounce {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.9);
+    }
+}

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "../styles/landing.css";
 import { Link } from "react-router-dom";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
+import Chatbot from './Chatbot/Chatbot';
 
 const Landing = () => {
   const [projects, setProjects] = useState([]);
@@ -65,6 +64,11 @@ const Landing = () => {
           ))}
         </div>
       </section>
+      <section className="App">
+            <h1>Welcome to My Portfolio</h1>
+            {/* Other components */}
+            <Chatbot />
+        </section>
 
       <footer className="footer">
         <p>© 2024 Ashish. All rights reserved.</p>
